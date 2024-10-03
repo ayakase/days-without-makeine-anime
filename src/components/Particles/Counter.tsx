@@ -40,11 +40,37 @@ const ElapsedTime = () => {
   }, []); // Remove targetDate from the dependency array
 
   return (
-    <div>
-      <h1>Elapsed Time since {targetDate.toLocaleString()}</h1>
-      <div>
-        {elapsedTime.days} Days, {elapsedTime.hours} Hours,{" "}
-        {elapsedTime.minutes} Minutes, {elapsedTime.seconds} Seconds
+    <div
+      className="w-full flex justify-center"
+      style={{ fontFamily: "Quantico", fontSize: "24px" }}
+    >
+      <div className="h-40 border-2 text-[#070A7D] rounded-xl overflow-hidden border-blue-800 flex gap-3 p-2">
+        <div className="flex flex-col h-full items-center justify-center">
+          <span className="h-full text-7xl w-24 grid place-items-center bg-[#FFF100] rounded-xl">
+            {elapsedTime.days}
+          </span>
+          <span className="font-bold">Days</span>
+        </div>
+        <div className="flex flex-col h-full items-center">
+          <span className="h-full text-7xl w-24 grid place-items-center bg-[#FFF100] rounded-xl">
+            {elapsedTime.hours}
+          </span>
+          <span className="font-bold">Hours</span>
+        </div>
+        <div className="flex flex-col h-full items-center">
+          <span className="h-full text-7xl w-24 grid place-items-center bg-[#FFF100] rounded-xl">
+            {elapsedTime.minutes}
+          </span>
+          <span className="font-bold">Minutes</span>
+        </div>
+        <div className="flex flex-col h-full items-center">
+          <span className="h-full text-7xl w-24 grid place-items-center bg-[#FFF100] rounded-xl">
+            {elapsedTime.seconds}
+          </span>
+          <span className="font-bold">Seconds</span>
+        </div>
+        {/* , {elapsedTime.hours} Hours, {elapsedTime.minutes} Minutes,{" "}
+        {elapsedTime.seconds} Seconds */}
       </div>
     </div>
   );

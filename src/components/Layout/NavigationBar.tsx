@@ -6,21 +6,23 @@ export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function NavBar() {
   return (
-    <div className="relative">
-      <Dock direction="middle">
-        <DockIcon>
-          <Icons.gitHub className="size-6" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.googleDrive className="size-6" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.notion className="size-6" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.whatsapp className="size-6" />
-        </DockIcon>
-      </Dock>
+    <div className="fixed bottom-8 flex justify-center w-full">
+      <div className="relative">
+        <Dock direction="middle">
+          <DockIcon>
+            <Icons.gitHub className="size-6" />
+          </DockIcon>
+          <DockIcon>
+            <Icons.googleDrive className="size-6" />
+          </DockIcon>
+          <DockIcon>
+            <Icons.notion className="size-6" />
+          </DockIcon>
+          <DockIcon>
+            <Icons.whatsapp className="size-6" />
+          </DockIcon>
+        </Dock>
+      </div>
     </div>
   );
 }
