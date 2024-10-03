@@ -78,7 +78,7 @@ const ReviewCard = ({
   );
 };
 
-export function MarqueeDemo() {
+export function ImageMarquee() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
       <Marquee pauseOnHover className="[--duration:20s]">

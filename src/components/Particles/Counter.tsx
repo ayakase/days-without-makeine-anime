@@ -37,7 +37,7 @@ const ElapsedTime = () => {
 
     // Clean up the interval on component unmount
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, []); // Remove targetDate from the dependency array
 
   return (
     <div>
