@@ -5,10 +5,7 @@ const Overlay = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 0);
-    return () => clearTimeout(timer); // Cleanup timer on unmount
+    setIsVisible(false);
   }, []);
 
   return (
