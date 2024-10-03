@@ -7,6 +7,7 @@ import Overlay from "./components/Animations/StartupLayout";
 // import { VelocityScroll } from "./components/ui/scroll-based-velocity";
 import Marquee from "./components/ui/marquee";
 import { MarqueeDemo } from "./components/MagicUIBased/ImageMarquee";
+import CountdownTimer from "./components/Particles/Counter";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
             delay={0.1}
           ></LetterPullup>
           {/* <Marquee></Marquee> */}
+          <CountdownTimer></CountdownTimer>
           <MarqueeDemo></MarqueeDemo>
           {/* <Confetti></Confetti> */}
         </div>
