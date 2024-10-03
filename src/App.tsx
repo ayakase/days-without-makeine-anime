@@ -2,7 +2,7 @@ import "./App.css";
 import NavBar from "./components/Layout/NavigationBar";
 import Footer from "./components/Layout/Footer";
 import LetterPullup from "./components/ui/letter-pullup";
-import Confetti from "./components/ui/confetti";
+// import Confetti from "./components/ui/confetti";
 function App() {
   return (
     <>
