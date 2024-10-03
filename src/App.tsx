@@ -28,7 +28,8 @@ function App() {
           <CountdownTimer></CountdownTimer>
           <ImageMarquee></ImageMarquee>
         </div>
-        a<Overlay></Overlay>
+
+        <Overlay></Overlay>
         <Footer></Footer>
       </div>
     </>
