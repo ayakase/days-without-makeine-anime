@@ -1,26 +1,29 @@
-// Overlay.jsx
+// Layout.jsx
 import { useEffect, useState } from "react";
 
 const Overlay = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Hide the overlay after 1 second
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1000);
-
-    return () => clearTimeout(timer); // Cleanup the timer
+    }, 0);
+    return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
   return (
-    <div
-      className={`fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    >
-      <div className="text-white text-xl">Welcome to the page!</div>
-    </div>
+    <>
+      <div
+        className={`fixed inset-0 bg-blue-500 transition-transform duration-500 ${
+          isVisible ? "translate-x-0" : "translate-x-full"
+        }`}
+      ></div>
+      <div
+        className={`fixed inset-0 bg-yellow-300 transition-transform duration-300 ${
+          isVisible ? "translate-x-0" : "translate-x-full"
+        }`}
+      ></div>
+    </>
   );
 };
 

@@ -1,9 +1,12 @@
 import "./App.css";
-import NavBar from "./components/Layout/NavigationBar";
+// import NavBar from "./components/Layout/NavigationBar";
 import Footer from "./components/Layout/Footer";
 import LetterPullup from "./components/ui/letter-pullup";
 import Overlay from "./components/Animations/StartupLayout";
 // import Confetti from "./components/ui/confetti";
+// import { VelocityScroll } from "./components/ui/scroll-based-velocity";
+import Marquee from "./components/ui/marquee";
+import { MarqueeDemo } from "./components/MagicUIBased/ImageMarquee";
 function App() {
   return (
     <>
@@ -15,8 +18,12 @@ function App() {
             className="text-yellow-400"
             delay={0.1}
           ></LetterPullup>
+          {/* <Marquee></Marquee> */}
+          <MarqueeDemo></MarqueeDemo>
           {/* <Confetti></Confetti> */}
         </div>
+
+        {/* <VelocityScroll text="sme" default_velocity="2"></VelocityScroll> */}
         <Overlay></Overlay>
         <Footer></Footer>
       </div>
