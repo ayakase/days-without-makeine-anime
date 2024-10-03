@@ -16,7 +16,12 @@ function App() {
             className="text-yellow-400"
             delay={0.1}
           ></LetterPullup>
-          <CoolMode>
+          <CoolMode
+            options={{
+              particle:
+                "https://pbs.twimg.com/profile_images/1782811051504885763/YR5-kWOI_400x400.jpg",
+            }}
+          >
             <button>click</button>
           </CoolMode>
           <CountdownTimer></CountdownTimer>
