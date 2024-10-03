@@ -16,6 +16,7 @@ function App() {
             className="text-yellow-400"
             delay={0.1}
           ></LetterPullup>
+          a
           <CoolMode
             options={{
               particle:
