@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Dock, DockIcon } from "../../components/ui/dock";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -10,10 +11,14 @@ export function NavBar() {
       <div className="relative">
         <Dock direction="middle">
           <DockIcon>
-            <Icons.gitHub className="size-6" />
+            <Link to="/">
+              <Icons.gitHub className="size-6"></Icons.gitHub>
+            </Link>
           </DockIcon>
           <DockIcon>
-            <Icons.googleDrive className="size-6" />
+            <Link to="about">
+              <Icons.googleDrive className="size-6" />
+            </Link>
           </DockIcon>
           <DockIcon>
             <Icons.notion className="size-6" />
