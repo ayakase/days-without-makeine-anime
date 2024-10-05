@@ -9,23 +9,47 @@ export function NavBar() {
   return (
     <div className="fixed bottom-8 flex justify-center w-full">
       <div className="relative">
-        <Dock direction="middle">
+        <Dock direction="bottom" magnification={80}>
           <DockIcon>
-            <Link to="/">
-              <Icons.gitHub className="size-6"></Icons.gitHub>
+            <Link to="/" className="flex flex-col items-center group">
+              <p className="hidden group-hover:block">Home</p>
+              <img
+                src="https://i.imgur.com/E7eelXK.png"
+                className="w-full"
+                alt=""
+              />
             </Link>
           </DockIcon>
           <DockIcon>
-            <Link to="about">
-              <Icons.googleDrive className="size-6" />
+            <Link to="/chat" className="flex flex-col items-center group">
+              <p className="hidden group-hover:block">Chat</p>
+              <img
+                src="https://i.imgur.com/7MX2aNi.png"
+                className="w-full"
+                alt=""
+              />
             </Link>
           </DockIcon>
           <DockIcon>
-            <Icons.notion className="size-6" />
+            <Link to="/game" className="flex flex-col items-center group">
+              <p className="hidden group-hover:block">Game</p>
+              <img
+                src="https://i.imgur.com/WespQzm.png"
+                className="w-full"
+                alt=""
+              />
+            </Link>
           </DockIcon>
-          <DockIcon>
-            <Icons.whatsapp className="size-6" />
-          </DockIcon>
+          {/* <DockIcon>
+            <Link to="about" className="flex flex-col items-center group">
+              <p className="hidden group-hover:block">Home</p>
+              <img
+                src="https://i.imgur.com/WespQzm.png"
+                className="w-full"
+                alt=""
+              />
+            </Link>
+          </DockIcon> */}
         </Dock>
       </div>
     </div>

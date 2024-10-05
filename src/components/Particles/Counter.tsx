@@ -46,7 +46,7 @@ const ElapsedTime = () => {
       .map((digit: number, index: number) => (
         <span
           key={index}
-          className="h-full text-7xl w-20 grid place-items-center bg-[#FFF100] rounded-xl"
+          className="h-full text-8xl w-24 grid place-items-center bg-[#FFF100] rounded-xl"
         >
           {digit}
         </span>
@@ -58,7 +58,7 @@ const ElapsedTime = () => {
       className="w-full flex justify-center"
       style={{ fontFamily: "Quantico", fontSize: "24px" }}
     >
-      <div className="h-40 border-2 text-[#070A7D] rounded-xl overflow-hidden border-blue-800 flex flex-row items-center gap-2 p-2">
+      <div className="h-44 border-2 text-[#070A7D] rounded-xl overflow-hidden border-blue-800 flex flex-row items-center gap-2 p-2">
         <div className="flex flex-col  items-center">
           <div className="flex flex-row gap-2">
             {renderDigits(elapsedTime.days)}

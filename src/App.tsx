@@ -3,7 +3,8 @@ import { NavBar } from "./components/Layout/NavigationBar";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
+import { Chat } from "./pages/Chat";
+import { Game } from "./pages/Game";
 function App() {
   return (
     <>
@@ -13,8 +14,8 @@ function App() {
             <NavBar></NavBar>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              {/* <Route path="/contact" element={<>smt</>} /> */}
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/game" element={<Game />} />
             </Routes>
           </div>
         </Router>

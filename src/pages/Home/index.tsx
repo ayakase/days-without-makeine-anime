@@ -1,33 +1,58 @@
 import Footer from "../../components/Layout/Footer";
 import LetterPullup from "../../components/ui/letter-pullup";
-import Overlay from "../../components/Animations/StartupLayout";
+import Overlay from "../../components/Animations/StartupOverlay";
 import { ImageMarquee } from "../../components/MagicUIBased/ImageMarquee";
 import CountdownTimer from "../../components/Particles/Counter";
 import { CoolMode } from "../../components/ui/cool-mode";
+import { AnimatedSubscribeButton } from "../../components/ui/animated-subscribe-button";
 import "./index.css";
+// import Comp from "../../components/Animations/PhysicTank";
 export function Home() {
   return (
     <>
       <div className="background">
-        <LetterPullup
-          words="Days without 負けヒロインが多すぎる！anime"
-          className="text-yellow-400"
-          delay={0.1}
-        ></LetterPullup>
-        <CountdownTimer></CountdownTimer>
-        <div className="w-full flex justify-center">
-          <CoolMode
-            options={{
-              particle: "https://i.imgur.com/JiNL6Kd.png",
-              speedUp: 20,
-              size: 50,
-            }}
-          >
-            <button>click</button>
-          </CoolMode>
+        <div className="h-screen w-screen grid place-items-center">
+          <div>
+            <LetterPullup
+              words="Days without Too Many Losing Heroines! anime"
+              className="text-yellow-400 !text-6xl mb-10"
+              delay={0.05}
+            ></LetterPullup>
+            <CountdownTimer></CountdownTimer>
+            <div className="w-full flex justify-center">
+              <CoolMode
+                options={{
+                  particle: "https://i.imgur.com/JiNL6Kd.png",
+                  // speedUp: 1,
+                  // size: 50,
+                }}
+              >
+                <div>
+                  <AnimatedSubscribeButton
+                    buttonColor="#000000"
+                    buttonTextColor="#ffffff"
+                    subscribeStatus={false}
+                    initialText={
+                      <span className="group inline-flex items-center">
+                        Another season{" "}
+                      </span>
+                    }
+                    changeText={
+                      <span className="group inline-flex items-center">
+                        Ty{" "}
+                      </span>
+                    }
+                  />
+                </div>
+              </CoolMode>
+            </div>
+          </div>
         </div>
         <ImageMarquee></ImageMarquee>
-        <Overlay></Overlay>
+
+        {/* <Comp></Comp> */}
+
+        <Overlay name="anna"></Overlay>
         {/* <Footer></Footer> */}
       </div>
     </>
