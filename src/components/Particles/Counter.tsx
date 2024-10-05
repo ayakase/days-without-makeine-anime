@@ -36,14 +36,14 @@ const ElapsedTime = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const formatTime = (value) => {
+  const formatTime = (value: number): string => {
     return value.toString().padStart(2, "0");
   };
 
   const renderDigits = (number: number) => {
     return formatTime(number)
-      .split("")
-      .map((digit: number, index: number) => (
+      .split("") // This is now valid since formatTime returns a string
+      .map((digit: string, index: number) => (
         <span
           key={index}
           className="h-full text-8xl w-24 grid place-items-center bg-[#FFF100] rounded-xl"

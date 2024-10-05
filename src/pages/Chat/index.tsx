@@ -2,13 +2,13 @@ import Overlay from "../../components/Animations/StartupOverlay";
 import { useState } from "react";
 
 export function Chat() {
-  const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [messages, setMessages] = useState<string[]>([]); // Specify the type as string[]
+  const [inputValue, setInputValue] = useState<string>(""); // Specify the type as string
 
   const sendMessage = () => {
     if (inputValue.trim()) {
       setMessages([...messages, inputValue]);
-      setInputValue("");
+      setInputValue(""); // Clear the input after sending
     }
   };
 
