@@ -7,7 +7,7 @@ export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function NavBar() {
   return (
-    <div className="fixed bottom-8 flex justify-center w-full">
+    <div className="fixed bottom-8 flex justify-center w-full z-[9999999999]">
       <div className="relative">
         <Dock direction="bottom" magnification={80}>
           <DockIcon>

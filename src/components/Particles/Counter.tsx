@@ -42,11 +42,11 @@ const ElapsedTime = () => {
 
   const renderDigits = (number: number) => {
     return formatTime(number)
-      .split("") // This is now valid since formatTime returns a string
+      .split("")
       .map((digit: string, index: number) => (
         <span
           key={index}
-          className="h-full text-8xl w-24 grid place-items-center bg-[#FFF100] rounded-xl"
+          className="h-full text-4xl sm:text-6xl lg:text-8xl w-12 sm:w-16 lg:w-24 grid place-items-center bg-[#FFF100] rounded-xl"
         >
           {digit}
         </span>
@@ -56,36 +56,35 @@ const ElapsedTime = () => {
   return (
     <div
       className="w-full flex justify-center"
-      style={{ fontFamily: "Quantico", fontSize: "24px" }}
+      style={{ fontFamily: "Quantico", fontSize: "16px" }}
     >
-      <div className="h-44 border-2 text-[#070A7D] rounded-xl overflow-hidden border-blue-800 flex flex-row items-center gap-2 p-2">
-        <div className="flex flex-col  items-center">
-          <div className="flex flex-row gap-2">
+      <div className="h-32 sm:h-40 lg:h-44 border-2 text-[#070A7D] rounded-xl overflow-hidden border-blue-800 flex flex-row items-center gap-1 sm:gap-2 p-2 py-6">
+        <div className="flex flex-col items-center h-full">
+          <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.days)}
           </div>
-          {/* <span className="font-bold">Days</span> */}
+          {/* <span className="text-xs sm:text-sm font-bold">Days</span> */}
         </div>
-        <span>:</span>
-        <div className="flex flex-col  items-center">
-          <div className="flex flex-row gap-2">
+        <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
+        <div className="flex flex-col items-center h-full">
+          <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.hours)}
           </div>
-          {/* <span className="font-bold">Hours</span> */}
+          {/* <span className="text-xs sm:text-sm font-bold">Hours</span> */}
         </div>
-        <span>:</span>
-
-        <div className="flex flex-col  items-center">
-          <div className="flex flex-row gap-2">
+        <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
+        <div className="flex flex-col items-center h-full">
+          <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.minutes)}
           </div>
-          {/* <span className="font-bold">Minutes</span> */}
+          {/* <span className="text-xs sm:text-sm font-bold">Minutes</span> */}
         </div>
-        <span>:</span>
-        <div className="flex flex-col  items-center">
-          <div className="flex flex-row gap-2">
+        <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
+        <div className="flex flex-col items-center h-full">
+          <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.seconds)}
           </div>
-          {/* <span className="font-bold">Seconds</span> */}
+          {/* <span className="text-xs sm:text-sm font-bold">Seconds</span> */}
         </div>
       </div>
     </div>
