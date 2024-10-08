@@ -54,7 +54,7 @@ const applyParticleEffect = (
 ): (() => void) => {
   instanceCounter++;
 
-  const defaultParticle = "circle";
+  const defaultParticle = "triangle";
   const particleType = options?.particle || defaultParticle;
   const sizes = [15, 20, 25, 35, 45];
   const limit = 45;
@@ -79,24 +79,30 @@ const applyParticleEffect = (
 
     const particle = document.createElement("div");
 
-    if (particleType === "circle") {
+    // Create a triangle with a square point
+    if (particleType === "triangle") {
       const svgNS = "http://www.w3.org/2000/svg";
-      const circleSVG = document.createElementNS(svgNS, "svg");
-      const circle = document.createElementNS(svgNS, "circle");
-      circle.setAttributeNS(null, "cx", (size / 2).toString());
-      circle.setAttributeNS(null, "cy", (size / 2).toString());
-      circle.setAttributeNS(null, "r", (size / 2).toString());
-      circle.setAttributeNS(
+      const triangleSVG = document.createElementNS(svgNS, "svg");
+      const triangle = document.createElementNS(svgNS, "polygon");
+
+      // Define points for the triangle shape with a square base
+      const points = `
+        ${size / 2},0 
+        ${size},${size} 
+        0,${size}`;
+
+      triangle.setAttributeNS(null, "points", points.trim());
+      triangle.setAttributeNS(
         null,
         "fill",
         `hsl(${Math.random() * 360}, 70%, 50%)`
       );
 
-      circleSVG.appendChild(circle);
-      circleSVG.setAttribute("width", size.toString());
-      circleSVG.setAttribute("height", size.toString());
+      triangleSVG.appendChild(triangle);
+      triangleSVG.setAttribute("width", size.toString());
+      triangleSVG.setAttribute("height", size.toString());
 
-      particle.appendChild(circleSVG);
+      particle.appendChild(triangleSVG);
     } else {
       particle.innerHTML = `<img src="${particleType}" width="${size}" height="${size}">`;
     }
@@ -116,6 +122,34 @@ const applyParticleEffect = (
       spinSpeed,
       spinVal,
       top,
+    });
+  }
+
+  function refreshParticles() {
+    particles.forEach((p) => {
+      p.left = p.left - p.speedHorz * p.direction;
+      p.top = p.top - p.speedUp;
+      p.speedUp = Math.min(p.size, p.speedUp - 1);
+      p.spinVal = p.spinVal + p.spinSpeed;
+
+      if (
+        p.top >=
+        Math.max(window.innerHeight, document.body.clientHeight) + p.size
+      ) {
+        particles = particles.filter((o) => o !== p);
+        p.element.remove();
+      }
+
+      p.element.setAttribute(
+        "style",
+        [
+          "position:absolute",
+          "will-change:transform",
+          `top:${p.top}px`,
+          `left:${p.left}px`,
+          `transform:rotate(${p.spinVal}deg)`,
+        ].join(";")
+      );
     });
   }
 

@@ -13,19 +13,21 @@ export function Home() {
       <div className="background">
         <div className="h-screen w-screen grid place-items-center">
           <div>
-            {/* <LetterPullup
+            <LetterPullup
               words="Days without Too Many Losing Heroines! anime"
               className="text-yellow-400 !text-6xl mb-10"
               delay={0.05}
-            ></LetterPullup> */}
+            ></LetterPullup>
             <CountdownTimer></CountdownTimer>
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center mt-2">
               <CoolMode
-                options={{
-                  particle: "https://i.imgur.com/JiNL6Kd.png",
-                  // speedUp: 1,
-                  // size: 50,
-                }}
+                options={
+                  {
+                    // particle: "https://i.imgur.com/JiNL6Kd.png",
+                    // speedUp: 1,
+                    // size: 50,
+                  }
+                }
               >
                 <div>
                   <AnimatedSubscribeButton

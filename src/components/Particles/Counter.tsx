@@ -63,28 +63,28 @@ const ElapsedTime = () => {
           <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.days)}
           </div>
-          {/* <span className="text-xs sm:text-sm font-bold">Days</span> */}
+          <span className="text-xl mt-2 font-bold">Days</span>
         </div>
         <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center h-full">
           <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.hours)}
           </div>
-          {/* <span className="text-xs sm:text-sm font-bold">Hours</span> */}
+          <span className="text-xl mt-2 font-bold">Hours</span>
         </div>
         <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center h-full">
           <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.minutes)}
           </div>
-          {/* <span className="text-xs sm:text-sm font-bold">Minutes</span> */}
+          <span className="text-xl mt-2 font-bold">Minutes</span>
         </div>
         <span className="text-4xl sm:text-6xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center h-full">
           <div className="flex flex-row gap-1 sm:gap-2 h-full">
             {renderDigits(elapsedTime.seconds)}
           </div>
-          {/* <span className="text-xs sm:text-sm font-bold">Seconds</span> */}
+          <span className="text-xl mt-2 font-bold">Seconds</span>
         </div>
       </div>
     </div>
