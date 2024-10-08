@@ -1,10 +1,11 @@
-import Footer from "../../components/Layout/Footer";
-import LetterPullup from "../../components/ui/letter-pullup";
+// import Footer from "../../components/Layout/Footer";
+// import LetterPullup from "../../components/ui/letter-pullup";
 import Overlay from "../../components/Animations/StartupOverlay";
-import { ImageMarquee } from "../../components/MagicUIBased/ImageMarquee";
+// import { ImageMarquee } from "../../components/MagicUIBased/ImageMarquee";
 import CountdownTimer from "../../components/Particles/Counter";
 import { CoolMode } from "../../components/ui/cool-mode";
 import { AnimatedSubscribeButton } from "../../components/ui/animated-subscribe-button";
+import GradualSpacing from "../../components/ui/gradual-spacing";
 import "./index.css";
 // import Comp from "../../components/Animations/PhysicTank";
 export function Home() {
@@ -18,16 +19,19 @@ export function Home() {
               className="text-yellow-400 !text-6xl mb-10"
               delay={0.05}
             ></LetterPullup> */}
+            <GradualSpacing
+              className="font-display text-center text-4xl font-bold -tracking-widest  text-yellow-400  md:text-7xl my-5"
+              text="Days without Too Many Losing Heroines! anime"
+            ></GradualSpacing>
             <CountdownTimer></CountdownTimer>
             <div className="w-full flex justify-center mt-2">
               <CoolMode
-                options={
-                  {
-                    // particle: "https://i.imgur.com/JiNL6Kd.png",
-                    // speedUp: 1,
-                    // size: 50,
-                  }
-                }
+                options={{
+                  // particle: "https://i.imgur.com/JiNL6Kd.png",
+                  speedUp: 200,
+                  // size: 50,
+                  particleCount: 0,
+                }}
               >
                 <div>
                   <AnimatedSubscribeButton
@@ -50,7 +54,7 @@ export function Home() {
             </div>
           </div>
         </div>
-        <ImageMarquee></ImageMarquee>
+        {/* <ImageMarquee></ImageMarquee> */}
 
         {/* <Comp></Comp> */}
 
