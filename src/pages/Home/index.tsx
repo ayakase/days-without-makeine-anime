@@ -5,8 +5,10 @@ import Overlay from "../../components/Animations/StartupOverlay";
 import CountdownTimer from "../../components/Particles/Counter";
 import { CoolMode } from "../../components/ui/cool-mode";
 import { AnimatedSubscribeButton } from "../../components/ui/animated-subscribe-button";
-import GradualSpacing from "../../components/ui/gradual-spacing";
+// import GradualSpacing from "../../components/ui/gradual-spacing";
 import HeroVideoDialog from "../../components/ui/hero-video-dialog";
+// import HyperText from "../../components/ui/hyper-text";
+import BoxReveal from "../../components/ui/box-reveal";
 import "./index.css";
 // import Comp from "../../components/Animations/PhysicTank";
 export function Home() {
@@ -16,14 +18,63 @@ export function Home() {
         <div className="h-screen w-screen grid place-items-center">
           <div>
             <div className="relative w-96">
-              <HeroVideoDialog
+              {/* <HeroVideoDialog
                 className="dark:hidden block"
                 animationStyle="top-in-bottom-out"
                 videoSrc="https://www.youtube.com/embed/uytJ6_KTCZI?si=u-IYoXIfMwOm4QHB"
                 thumbnailSrc="https://animetv-jp.net/wp-content/uploads/2024/08/GUEoK1naUAA0I2--e1722712211505-696x392.jpg"
                 thumbnailAlt="Hero Video"
-              />
+              /> */}
             </div>
+            <div className="size-full max-w-lg items-center justify-center overflow-hidden pt-8">
+              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                <p className="text-[3.5rem] font-semibold">
+                  Magic UI<span className="text-[#5046e6]">.</span>
+                </p>
+              </BoxReveal>
+
+              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                <h2 className="mt-[.5rem] text-[1rem]">
+                  UI library for{" "}
+                  <span className="text-[#5046e6]">Design Engineers</span>
+                </h2>
+              </BoxReveal>
+
+              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                <div className="mt-6">
+                  <p>
+                    -&gt; 20+ free and open-source animated components built
+                    with
+                    <span className="font-semibold text-[#5046e6]"> React</span>
+                    ,
+                    <span className="font-semibold text-[#5046e6]">
+                      {" "}
+                      Typescript
+                    </span>
+                    ,
+                    <span className="font-semibold text-[#5046e6]">
+                      {" "}
+                      Tailwind CSS
+                    </span>
+                    , and
+                    <span className="font-semibold text-[#5046e6]">
+                      {" "}
+                      Framer Motion
+                    </span>
+                    . <br />
+                    -&gt; 100% open-source, and customizable. <br />
+                  </p>
+                </div>
+              </BoxReveal>
+
+              {/* <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                <Button className="mt-[1.6rem] bg-[#5046e6]">Explore</Button>
+              </BoxReveal> */}
+            </div>
+            {/* <HyperText
+              className="text-4xl font-bold text-[#FFF100] dark:text-white"
+              text="Days without Too Many Losing Heroines! anime"
+            /> */}
             {/* <LetterPullup
               words="Days without Too Many Losing Heroines! anime"
               className="text-yellow-400 !text-6xl mb-10"
