@@ -125,33 +125,33 @@ const applyParticleEffect = (
     });
   }
 
-  function refreshParticles() {
-    particles.forEach((p) => {
-      p.left = p.left - p.speedHorz * p.direction;
-      p.top = p.top - p.speedUp;
-      p.speedUp = Math.min(p.size, p.speedUp - 1);
-      p.spinVal = p.spinVal + p.spinSpeed;
+  // function refreshParticles() {
+  //   particles.forEach((p) => {
+  //     p.left = p.left - p.speedHorz * p.direction;
+  //     p.top = p.top - p.speedUp;
+  //     p.speedUp = Math.min(p.size, p.speedUp - 1);
+  //     p.spinVal = p.spinVal + p.spinSpeed;
 
-      if (
-        p.top >=
-        Math.max(window.innerHeight, document.body.clientHeight) + p.size
-      ) {
-        particles = particles.filter((o) => o !== p);
-        p.element.remove();
-      }
+  //     if (
+  //       p.top >=
+  //       Math.max(window.innerHeight, document.body.clientHeight) + p.size
+  //     ) {
+  //       particles = particles.filter((o) => o !== p);
+  //       p.element.remove();
+  //     }
 
-      p.element.setAttribute(
-        "style",
-        [
-          "position:absolute",
-          "will-change:transform",
-          `top:${p.top}px`,
-          `left:${p.left}px`,
-          `transform:rotate(${p.spinVal}deg)`,
-        ].join(";")
-      );
-    });
-  }
+  //     p.element.setAttribute(
+  //       "style",
+  //       [
+  //         "position:absolute",
+  //         "will-change:transform",
+  //         `top:${p.top}px`,
+  //         `left:${p.left}px`,
+  //         `transform:rotate(${p.spinVal}deg)`,
+  //       ].join(";")
+  //     );
+  //   });
+  // }
 
   function refreshParticles() {
     particles.forEach((p) => {
